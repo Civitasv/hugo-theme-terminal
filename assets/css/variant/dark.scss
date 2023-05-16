@@ -4,7 +4,10 @@ $color: white;
 $border-color: rgba(255, 255, 255, .1);
 
 /* Code */
-$punctuation: black;
+$punctuation: mix($accent, #fff, .9);
+$function: mix($accent, #fff, .9);
+$symbol: mix($accent, #fff, .9);
+$comment: rgba(255, 255, 255, .5);
 
 /* MEDIA QUERIES */
 $phone: "max-width: 684px";
