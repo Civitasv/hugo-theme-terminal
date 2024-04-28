@@ -16,11 +16,7 @@ code.language-scss,
 .token.atrule,
 .token.number,
 .token.inserted,
-.token.important {
-  color: $accent !important;
-  font-weight: bold;
-  font-style: italic;
-}
+.token.important {}
 
 .token.tag-id,
 .token.atrule-id,
@@ -35,10 +31,7 @@ code.language-scss,
 .token.property,
 .token.class-name,
 .token.constant,
-.token.symbol {
-  color: $symbol !important;
-  font-weight: bold;
-}
+.token.symbol {}
 
 .token.property,
 .token.function,
@@ -46,22 +39,16 @@ code.language-scss,
 .token.deleted,
 code.language-javascript,
 code.language-html,
-.command-line-prompt > span:before {
-  color: $function !important;
-}
+.command-line-prompt>span:before {}
 
 .token.selector,
 .token.tag,
-.token.punctuation {
-  color: $punctuation;
-}
+.token.punctuation {}
 
 .token.comment,
 .token.prolog,
 .token.doctype,
-.token.cdata {
-  color: $comment !important;
-}
+.token.cdata {}
 
 .token.namespace {
   opacity: .7 !important;
@@ -74,8 +61,6 @@ pre[data-line] {
 pre[class*="language-"] {
   margin: 0;
   padding: 0;
-  overflow: auto;
-  color: $function !important;
 }
 
 .line-highlight {
@@ -120,38 +105,39 @@ pre[class*="language-"] {
 }
 
 .code-toolbar {
-  $code-margin: 40px;
-	position: relative;
-	margin: $code-margin 0;
-	padding: 20px;
-	border: 1px solid $border-color;
+  $code-margin: 10px;
+  position: relative;
+  margin: $code-margin 0;
+  padding: 20px;
+  border: 1px solid $border-color;
 
-	+ .code-toolbar,
-	+ .highlight,
-	+ .highlight .code-toolbar {
-		border-top: 0;
-		margin-top: calc(-1 * $code-margin);
-	}
+  +.code-toolbar,
+  +.highlight,
+  +.highlight .code-toolbar {
+    border-top: 0;
+    margin-top: calc(-1 * $code-margin);
+  }
 
-	pre, code {
-		border: none;
-	}
+  pre,
+  code {
+    border: none;
+  }
 
-	code {
-		display: block;
-		color: inherit;
-	}
+  code {
+    display: block;
+    color: inherit;
+  }
 
-  > .toolbar {
+  >.toolbar {
     button {
       font-size: .8em !important;
-      background: hsla(0,0%,87.8%,.2) !important;
+      background: hsla(0, 0%, 87.8%, .2) !important;
       color: #bbb !important;
-      box-shadow: 0 2px 0 0 rgba(0,0,0,.2) !important;
+      box-shadow: 0 2px 0 0 rgba(0, 0, 0, .2) !important;
       border-radius: 0 !important;
       margin: 6px !important;
       padding: 10px !important;
-      user-select:none
+      user-select: none
     }
   }
 }

@@ -13,7 +13,7 @@ body {
   padding: 0;
   font-family: 'IBM Plex Serif', 'Noto Sans SC';
   font-size: 1rem;
-  line-height: 1.54;
+  line-height: 2.0;
   letter-spacing: -0.02em;
   background-color: $background;
   color: $color;
@@ -23,13 +23,53 @@ body {
   font-variant-ligatures: contextual;
   -webkit-overflow-scrolling: touch;
   -webkit-text-size-adjust: 100%;
+  counter-reset: section;
 
   @media ($phone) {
     font-size: 1rem;
   }
 }
 
+.post-content {
+  h2 {
+    /* 遇到 h2 时重置所有子级计数器 */
+    counter-reset: subsection subsubsection;
+    counter-increment: section;
+  }
+
+  h2::before {
+    /* 显示 h2 的编号 */
+    content: counter(section) ". ";
+    font-weight: bold;
+  }
+
+  h3 {
+    /* 遇到 h3 时重置更低级的计数器 */
+    counter-reset: subsubsection;
+    counter-increment: subsection;
+  }
+
+  h3::before {
+    /* 显示 h3 的编号，包括 h2 */
+    content: counter(section) "." counter(subsection) " ";
+    font-weight: bold;
+  }
+
+  h4 {
+    /* h4 只需要增加计数器 */
+    counter-increment: subsubsection;
+  }
+
+  h4::before {
+    /* 显示 h4 的编号，包括 h2 和 h3 */
+    content: counter(section) "." counter(subsection) "." counter(subsubsection) " ";
+    font-weight: bold;
+  }
+
+}
+
 .headings--one-size {
+
   h1,
   h2,
   h3,
@@ -84,7 +124,9 @@ img {
 }
 
 p {
-  margin-bottom: 20px;
+  margin: 0;
+  text-align: justify;
+  text-indent: 1em;
 }
 
 figure {
@@ -265,8 +307,13 @@ ol {
 ol {
   list-style: none;
   counter-reset: li;
+  margin-left: 1em;
 
   li {
+    p {
+      text-indent: 0em;
+    }
+
     counter-increment: li;
   }
 
@@ -275,7 +322,6 @@ ol {
     position: absolute;
     right: calc(100% + 10px);
     color: $accent;
-    display: inline-block;
     text-align: right;
   }
 
