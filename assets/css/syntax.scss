@@ -18,6 +18,8 @@ code.language-scss,
 .token.inserted,
 .token.important {
   color: $accent !important;
+  font-weight: bold;
+  font-style: italic;
 }
 
 .token.tag-id,
@@ -35,6 +37,7 @@ code.language-scss,
 .token.constant,
 .token.symbol {
   color: $symbol !important;
+  font-weight: bold;
 }
 
 .token.property,

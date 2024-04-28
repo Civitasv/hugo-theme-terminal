@@ -89,6 +89,7 @@
 
   &__dropdown {
     @include menu;
+    color: $color;
 
     .open & {
       display: flex;
